@@ -36,9 +36,25 @@ public class HTTPMethods {
 				ResponseParsing.Response_Content_Compare(res, pr, "json-server", "title");
 		
 	}
-
-	public void PostRequest()
-	{
-		
+	
+		public void PostRequest(String EnvironmentName) throws IOException
+		{
+			
+			org.testing.utilities.GatterShetter obj = new org.testing.utilities.GatterShetter();
+			obj.setId(11);
+			obj.setTitle(pr.ReadProperty("title"));
+			obj.setAuthor(pr.ReadProperty("author"));
+			
+			Response res =
+			given()
+			.contentType(ContentType.JSON)
+			.body(obj)
+			.when()
+			.post(pr.ReadProperty(EnvironmentName));
+			
+			System.out.println(res.asString());
+			
+			ResponseValidation.Res_validate(res, 201, "application/json; charset=utf-8");
+			
 	}
 }

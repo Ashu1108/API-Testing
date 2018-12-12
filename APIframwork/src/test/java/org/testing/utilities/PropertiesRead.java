@@ -10,7 +10,7 @@ public class PropertiesRead {
 	public String ReadProperty(String key) throws IOException
 
 	{
-		File f = new File("C:\\Users\\Admin\\eclipse-workspace\\API\\APIframwork\\Eve.properties");
+		File f = new File("C:\\Users\\Admin\\git\\API-Testing\\APIframwork\\Eve.properties");
 		FileInputStream fi = new FileInputStream(f);
 		Properties pr = new Properties();
 		pr.load(fi);
