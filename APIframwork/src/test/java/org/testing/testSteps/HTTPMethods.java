@@ -57,4 +57,21 @@ public class HTTPMethods {
 			ResponseValidation.Res_validate(res, 201, "application/json; charset=utf-8");
 			
 	}
+		
+		public void DeleteRequest(String EnvironmentName ) throws IOException
+		{
+			Response res = 
+			
+			given()
+			.contentType(ContentType.JSON)
+			.when()
+			.delete(pr.ReadProperty(EnvironmentName));
+			
+			
+			ResponseValidation.Res_validate(res, 200,"application/json; charset=utf-8" );
+			
+			
+		}
 }
+
+
